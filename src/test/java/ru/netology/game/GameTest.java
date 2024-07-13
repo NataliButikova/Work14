@@ -36,7 +36,7 @@ public class GameTest {
     @Test
     public void shouldRoundIfSecondPlayerStronger() throws NotRegisteredException {
         Game game = new Game();
-        Player player1 = new Player(4, "Butikova", 75);
+        Player player1 = new Player(4, "Natalia", 75);
         Player player2 = new Player(5, "Maria", 100);
         game.register(player1);
         game.register(player2);
@@ -51,7 +51,7 @@ public class GameTest {
     @Test
     public void shouldRoundWithUnRegisteredPlayers() {
         Game game = new Game();
-        Player player1 = new Player(4, "Butikova", 99);
+        Player player1 = new Player(4, "Natalia", 99);
         Player player2 = new Player(5, "Maria", 75);
         Exception exception = assertThrows(NotRegisteredException.class, () -> {
             game.round("Неизвестный игрок", "Неизвестный игрок");
@@ -66,7 +66,7 @@ public class GameTest {
     public void shouldRoundWithUnRegisteredPlayer1() {
         Game game = new Game();
         Player player1 = new Player(5, "Maria", 100);
-        Player player2 = new Player(4, "Butikova", 99);
+        Player player2 = new Player(4, "Natalia", 99);
         game.register(player2);
         Exception exception = assertThrows(NotRegisteredException.class, () -> {
             game.round("Неизвестный игрок", "Natalia");
